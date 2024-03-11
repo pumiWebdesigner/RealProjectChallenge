@@ -3,12 +3,18 @@
 @use "./blocks" as *;
 
 main {
-  font-family: "Jost", sans-serif;
-  font-family: "Noto Sans JP", sans-serif;
+  // font-family: "Jost", sans-serif;
+  // font-family: "Noto Sans JP", sans-serif;
 }
 body {
   font-family: "Noto Sans JP", sans-serif;
-  font-family: "Jost", sans-serif;
-  font-weight: 500;
   color: map.get($color, font);
+  @include font(16, 500, 24, 0.64);
+}
+* {
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

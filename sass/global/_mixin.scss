@@ -1,0 +1,43 @@
+@use "sass:map";
+
+$size: (
+  // sp-max: 1023px,
+  sp-max: 767px,
+  tab-min: 768px,
+  tab-max: 1023px,
+  pc-min: 1024px
+);
+
+$breakpoints: (
+  "sp": "(width <=  #{map.get($size, "sp-max")})",
+  "tab": "(#{map.get($size, "tab-min")} <= width <=  #{map.get($size, "tab-max")})",
+  "pc": "(#{map.get($size, "pc-min")} <= width)",
+  // "pc": "not (width <=  #{map.get($size, "pc-min")})",
+  // sp: "not (min-width: 768px)",
+  // "sp": "(width <= 767px)",
+  // "tb": "(768px <= width <=  1023px)",
+  // "pc": "( #{map.get($size, "pc-min")} <= width)",
+  // "pc": "(768px <= width)",,,,,,,,,,,,,
+) !default;
+
+@mixin mq($breakpoint: "sp") {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//Figma用
+@mixin font($size: null, $weight: null, $height: null, $spacing: null) {
+  @if $size {
+    font-size: calc($size / 16 * 1rem);
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $height {
+    line-height: calc($height / $size);
+  }
+  @if $spacing {
+    letter-spacing: calc($spacing / $size * 1em);
+  }
+}

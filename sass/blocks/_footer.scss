@@ -9,7 +9,8 @@
 .footer__inner {
   max-width: 1440px;
   margin-inline: auto;
-  padding-block: 56px 32px;
+  // padding-block: 56px 32px;
+  padding-block: 58px 32px;
   padding-inline: calc(20px + ((100vw - 1024px) / (1440 - 1024)) * (130 - 20));
   @include mq(tab) {
     padding-inline: 130px;
@@ -58,7 +59,8 @@
 .footer__link--head {
   @include font(20, 600, 30, 0.8);
   font-family: Jost;
-  padding-bottom: 9px;
+  // padding-bottom: 9px;
+  padding-bottom: 6.4px;
   position: relative;
   &::after {
     content: "";
@@ -93,20 +95,22 @@
 // }
 
 .fa-brands {
-  font-size: 32px;
   display: block;
   width: 32px;
   text-align: center;
 }
 
-// .fa-twitter {
-// }
+.fa-instagram {
+  font-size: 30px;
+}
 
-// .fa-instagram {
-// }
+.fa-twitter {
+  font-size: 26px;
+}
 
-// .fa-facebook-f {
-// }
+.fa-facebook-f {
+  font-size: 18px;
+}
 
 .footer__message {
   margin-top: 72px;
@@ -114,6 +118,7 @@
 }
 
 .footer__copy {
+  display: inline-block;
   margin-top: 16px;
   @include font(10, 500, 15, 0.4);
 }

@@ -156,15 +156,16 @@
   }
 }
 
-.header__nav--link {
-}
+// .header__nav--link {
+// }
 
 .header__nav--btn {
   @include font(14, 700, 21, 0.56);
   border-radius: 99999px;
   border: 1px solid var(--Gray01, #565956);
   background: var(--White, #fff);
-  padding: 8px 24px;
+  // padding: 8px 24px;
+  padding: 8px 23px;
   transition: all 0.3s ease;
   @media (hover: hover) {
     &:hover,

@@ -11,9 +11,17 @@ $color: (
   // header-bg-sp: blue,
   // drawer-bg-sp: linear-gradient(to bottom, #00f, #80f, #000),
   // section-sub: rgb(255, 240, 228),
-  // bg-dark: #4a4a4a,,,,,,,,
+  // bg-dark: #4a4a4a,,,,,,,,,,
 );
-
+:root {
+  --Gray01: #565956;
+  --White: #fff;
+  --Gray02: #f2f4f1;
+  --green: #609484;
+  --gold: #948260;
+  --accent: #ee5a6d;
+  --hov-btn: #0060a0;
+}
 // 階層
 $layer: (
   hamburger: 150,

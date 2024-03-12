@@ -19,7 +19,8 @@
   }
 }
 // 視覚的に認知できないユーザへの考慮。視覚的には要素を非表示にするが、スクリーンリーダーには読み上げられるようにする。
-.u-hidden-visually {
+.u-hidden-visually,
+.visually-hidden {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;

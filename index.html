@@ -51,7 +51,7 @@
         </h1>
         <div class="header__container">
           <nav class="header__nav">
-            <button class="header__menu js-header__menu">
+            <div class="header__menu js-header__menu" tabindex="0">
               家具
               <div class="header__menu--details">
                 <div class="header__menu--list">
@@ -72,8 +72,8 @@
                   </div>
                 </div>
               </div>
-            </button>
-            <button class="header__menu js-header__menu">
+            </div>
+            <div class="header__menu js-header__menu" tabindex="0">
               家電
               <div class="header__menu--details">
                 <div class="header__menu--list">
@@ -92,14 +92,14 @@
                   </div>
                 </div>
               </div>
-            </button>
+            </div>
 
             <a href="#" class="header__nav--link"><span class="hidden-sp">法人のお客様へ</span></a>
             <a href="#" class="header__nav--btn"><span class="hidden-sp">ログイン/会員登録</span></a>
           </nav>
           <div class="header__icons">
-            <button class="header__logout hidden-pc">
-              <img src="./img/header/logout.svg" alt="" />
+            <button class="header__logout hidden-pc" aria-label="Logout"></button>
+              <img loading="lazy" decoding="async" src="./img/header/logout.svg" alt="" width="24" height="24" />
             </button>
             <button class="header__nav--cart">
               <span class="visually-hidden">shopping-cart</span>
@@ -160,13 +160,13 @@
           </div>
         </div>
         <div class="footer__sns-list">
-          <a href="#" class="footer__sns-item">
+          <a href="#" class="footer__sns-item" aria-label="Instagram"></a>
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="#" class="footer__sns-item">
+            <a href="#" class="footer__sns-item" aria-label="Twitter"></a>
             <i class="fa-brands fa-twitter"></i>
           </a>
-          <a href="#" class="footer__sns-item">
+            <a href="#" class="footer__sns-item" aria-label="Social Media"></a>
             <i class="fa-brands fa-facebook-f"></i>
           </a>
         </div>

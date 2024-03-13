@@ -2,10 +2,12 @@
 @use "../global" as *;
 
 .pr {
-  padding-top: 18px;
+  padding-block: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url(../../img/realization/pr.png), lightgray 50% / cover no-repeat;
+
   @include mq(sp) {
     gap: 16px;
   }

@@ -1,14 +1,14 @@
 @use "sass:map";
 @use "../global" as *;
 
-.realization {
-}
+// .realization {
+// }
 
 .realization__container {
+  margin-top: 64px;
 }
 
 .realization__reasons {
-  margin-top: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,5 +52,5 @@
   }
 }
 
-.realization__reasons--text {
-}
+// .realization__reasons--text {
+// }

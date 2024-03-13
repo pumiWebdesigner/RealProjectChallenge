@@ -1,50 +1,89 @@
 @use "sass:map";
 @use "../global" as *;
 
-.pr {
-  padding-top: 18px;
+.voice {
+  .section__title--ja {
+    padding-right: 5px;
+    padding-bottom: 15px;
+  }
+  .section__title--en {
+  }
+}
+
+.voice__container {
+  margin-top: 64px;
+}
+
+.voice__reviews {
   display: flex;
   justify-content: center;
   align-items: center;
   @include mq(sp) {
-    gap: 16px;
+    flex-direction: column;
   }
 }
-.pr--texts {
-  text-align: center;
-}
-.pr--text {
-  @include font(24, 700, 36, 0.96);
+
+.voice__review--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 393px;
   @include mq(sp) {
-    @include font(16, 700, 24, 0.64);
+    width: 343px;
   }
 }
-.pr--text-l {
-  @include font(64, 700, 96, 2.56);
-  @include mq(sp) {
-    @include font(32, 700, 48, 1.28);
-  }
-}
-.pr--img {
-  width: 158px;
-  height: 203px;
+
+.voice__review--img {
+  // width: calc(393 / 1440 * 100%);
+  // height: auto;
+  width: 100%;
+  position: relative;
   img {
-    aspect-ratio: 158/203;
+    aspect-ratio: 16/9;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  @include mq(sp) {
-    width: 56px;
-    height: 73.309px;
-    img {
-      aspect-ratio: 56/73.309;
-    }
-  }
 }
 
-.pr--img-reverse {
-  img {
-    transform: rotateY(180deg);
+.voice__review--label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 122px;
+  height: 40px;
+  padding-block: 8px;
+  background: var(--Green, #609484);
+  color: var(--White, #fff);
+  font-family: Jost;
+  @include font(16, 600, 24, 0.64);
+}
+
+.voice__review--texts {
+  padding: 24px 47.5px;
+  background: var(--Gray03, #f2f4f1);
+  text-align: left;
+  // &:nth-child(2) {
+  //   background: var(--White, #fff);
+  // }
+}
+
+.voice__review--text-sub {
+  margin-top: 16px;
+  @include font(16, 500, 24, 0.64);
+  min-height: 240px;
+}
+
+.voice__review--text-main {
+  color: var(--White, #fff);
+  @include font(20, 700, 30, 0.8);
+  background: var(--Gold, #948260);
+  padding: 4px 10px;
+  display: inline-block;
+  & + & {
+    margin-top: 8px;
   }
+}
+.voice__review--author {
+  margin-top: 16px;
 }

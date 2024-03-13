@@ -10,7 +10,8 @@ $size: (
 
 $breakpoints: (
   "sp": "(width <=  #{map.get($size, "sp-max")})",
-  "tab": "(width <=  #{map.get($size, "tab-max")})",
+  "tab": "(#{map.get($size, "tab-min")} <= width <=  #{map.get($size, "tab-max")})",
+  // "tab": "(width <=  #{map.get($size, "tab-max")})",
   "pc": "(#{map.get($size, "pc-min")} <= width)",
   // "tab": "(#{map.get($size, "tab-min")} <= width <=  #{map.get($size, "tab-max")})",
   // "pc": "not (width <=  #{map.get($size, "pc-min")})",
@@ -18,7 +19,7 @@ $breakpoints: (
   // "sp": "(width <= 767px)",
   // "tb": "(768px <= width <=  1023px)",
   // "pc": "( #{map.get($size, "pc-min")} <= width)",
-  // "pc": "(768px <= width)",,,,,,,,,,,,,,
+  // "pc": "(768px <= width)",,,,,,,,,,,,,,,,
 ) !default;
 
 @mixin mq($breakpoint: "sp") {

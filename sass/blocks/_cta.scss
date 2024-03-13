@@ -2,19 +2,21 @@
 @use "../global" as *;
 
 .cta {
-  background: url(../../img/CTA.png) no-repeat center / cover lightgray;
+  background: url(../../img/cta/CTA.png) no-repeat center / cover lightgray;
   text-align: center;
 }
 .cta__inner {
   max-width: 1440px;
   margin-inline: auto;
-  padding: 48px 130px;
+  padding-block: 48px;
+  padding-inline: calc(30px + (130 - 30) * ((100vw - 768px) / (1440 - 768)));
+
   height: 100%;
   @include mq(sp) {
-    padding-inline: 16px;
+    padding: 56px 16px;
   }
 }
-// 大文字・小文字のボックス
+// ボタンとボタン以外のボックス
 .cta__container {
   display: flex;
   padding: 56px 64px;
@@ -24,12 +26,16 @@
   border-radius: 16px;
   background: var(--White, #fff);
   @include mq(sp) {
-    padding-inline: 16px;
+    padding: 32px 16px;
+    gap: 24px;
   }
 }
 // ボタン以外
 .cta__contents {
   position: relative;
+  @include mq(sp) {
+    width: 100%;
+  }
 }
 
 .cta__label--now {
@@ -41,10 +47,20 @@
   left: 23.005px;
   top: -30.015px;
   background: var(--Gray01, #565956);
+  @include mq(sp) {
+    transform: rotate(0deg);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .cta__message {
   @include font(24, 700, 36, 0.96);
+  @include mq(sp) {
+    margin-top: 32px;
+    @include font(16, 700, 24, 0.64);
+  }
 }
 
 .cta__message-l {
@@ -58,6 +74,9 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  @include mq(sp) {
+    flex-direction: column;
+  }
 }
 
 .cta__label {
@@ -68,6 +87,10 @@
   @include font(16, 700, 24, 0.64);
   border-radius: 16px;
   background: var(--Gray01, #565956);
+  @include mq(sp) {
+    width: 100%;
+    max-width: 311px;
+  }
 }
 
 .cta__button {
@@ -75,6 +98,11 @@
   justify-content: center;
   align-items: center;
   gap: 37.05px;
+  @include mq(sp) {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
 }
 
 .cta__button--step {
@@ -91,7 +119,14 @@
     width: 29px;
     height: 18px;
     // transform: rotate(89.832deg);
-    background: url(../../img/cta-arrow.svg) no-repeat center / contain;
+    background: url(../../img/cta/cta-triangle.svg) no-repeat center / contain;
+  }
+  @include mq(sp) {
+    &::after {
+      top: calc(100% - 5px);
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+    }
   }
 }
 
@@ -101,4 +136,24 @@
   background: linear-gradient(87deg, #698 2.32%, #689 96.4%);
   color: var(--White, #fff);
   @include font(20, 700, 30, 0.8);
+  span {
+    display: inline-block;
+    padding-right: 40px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0px;
+      width: 24px;
+      height: 24px;
+      background: url(../../img/cta/cta-arrow.svg) no-repeat center / contain;
+    }
+  }
+
+  @include mq(sp) {
+    width: 100%;
+    max-width: 311px;
+  }
 }

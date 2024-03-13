@@ -36,7 +36,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    // padding-inline: 130px;
+    // 縦24px、横72pxのグリッド
     gap: 24px 72px;
   }
   // ４つのうち１つのみ要素の縦横が異なるので(ABOUT)、一列で並べる時はflexにする

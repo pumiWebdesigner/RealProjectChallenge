@@ -46,7 +46,8 @@
   // justify-content: space-between;
   gap: 40px;
   @include mq(sp) {
-    gap: calc(10px + (40 - 10) * ((100vw - 375px) / (768 - 375)));
+    // gap: calc(10px + (40 - 10) * ((100vw - 375px) / (768 - 375)));
+    gap: calc(24px + (40 - 10) * ((100vw - 375px) / (768 - 375)));
   }
 }
 // ---------------------
@@ -77,6 +78,9 @@
     background: url(../../img/header/poligon.svg) no-repeat center;
     // transition: all 0.3s ease;
   }
+  @include mq(sp) {
+    padding-right: 20px;
+  }
 
   // &:hover,
   // &:focus,
@@ -90,6 +94,10 @@
     }
   }
   pointer-events: auto;
+  @include mq(sp) {
+    // size,weight,height,spacing
+    @include font(14, 700, 21, 0.56);
+  }
 }
 
 // ホバーメニュー

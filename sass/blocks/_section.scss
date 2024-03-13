@@ -2,44 +2,38 @@
 @use "../global" as *;
 
 .section {
+  text-align: center;
+  background: white;
+  padding-block: 88px;
 }
 
 .section__inner {
-  max-width: 1280px;
+  max-width: 1440px;
+  padding-inline: calc(30px + (130 - 30) * ((100vw - 768px) / (1440 - 768)));
   margin-inline: auto;
-  text-align: center;
+  height: 100%;
+  @include mq(sp) {
+    padding-inline: 16px;
+  }
 }
-
-.section__title {
-  display: inline-block;
+.section__title--ja {
+  @include font(24, 700, 36, 0.96);
+  padding-bottom: 17px;
   position: relative;
-  padding-inline: 95px;
-  @include font(28, 700, null, 2.24);
-  &::before,
   &::after {
     content: "";
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 67px;
-    height: 20px;
-    background: url(../../img/section-bar.svg);
+    width: 160px;
+    height: 1px;
+    background: var(--Gray01, #565956);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  &::before {
-    left: 0;
-  }
-  &::after {
-    right: 0;
-  }
-  @include mq(sp) {
-    @include font(20, 700, null, 1.6);
-    padding-inline: 65px;
+}
 
-    &::before,
-    &::after {
-      width: 49px;
-      height: 13px;
-      background: url(../../img/section-bar-sp.svg);
-    }
-  }
+.section__title--en {
+  font-family: Jost;
+  @include font(24, 600, 36, 0.96);
+  margin-top: 16px;
 }

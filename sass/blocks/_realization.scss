@@ -1,8 +1,9 @@
 @use "sass:map";
 @use "../global" as *;
 
-// .realization {
-// }
+.realization {
+  padding-block: 88px;
+}
 
 .realization__container {
   margin-top: 64px;

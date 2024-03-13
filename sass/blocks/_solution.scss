@@ -1,0 +1,104 @@
+@use "sass:map";
+@use "../global" as *;
+
+.voice {
+  .section__title--ja {
+    padding-right: 5px;
+    padding-bottom: 15px;
+    @include mq(sp) {
+      padding-bottom: 17px;
+    }
+  }
+  .section__title--en {
+  }
+}
+
+.voice__container {
+  margin-top: 64px;
+}
+
+.voice__reviews {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* デフォルト値であり、すべてのアイテムの高さをコンテナに合わせて伸ばします */
+
+  @include mq(sp) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.voice__review--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 393px;
+
+  @include mq(sp) {
+    width: 343px;
+  }
+}
+
+.voice__review--img {
+  width: 100%;
+  position: relative;
+  img {
+    aspect-ratio: 393/221;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include mq(sp) {
+      // aspect-ratio: 343/193;
+      aspect-ratio: 343/192;
+    }
+  }
+}
+
+.voice__review--label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 122px;
+  height: 40px;
+  padding-block: 8px;
+  background: var(--Green, #609484);
+  color: var(--White, #fff);
+  font-family: Jost;
+  @include font(16, 600, 24, 0.64);
+}
+
+.voice__review--texts {
+  padding: 24px 47.5px;
+  background: var(--Gray03, #f2f4f1);
+  text-align: left;
+  height: 100%;
+  .voice__review--item:nth-child(2) & {
+    background: var(--White, #fff);
+  }
+  @include mq(sp) {
+    padding: 24px 23.5px;
+  }
+}
+
+.voice__review--text-sub {
+  margin-top: 16px;
+  @include font(16, 500, 24, 0.64);
+  min-height: 240px;
+  @include mq(sp) {
+    min-height: auto;
+  }
+}
+
+.voice__review--text-main {
+  color: var(--White, #fff);
+  @include font(20, 700, 30, 0.8);
+  background: var(--Gold, #948260);
+  padding: 4px 10px;
+  display: inline-block;
+  & + & {
+    margin-top: 8px;
+  }
+}
+.voice__review--author {
+  margin-top: 16px;
+}

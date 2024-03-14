@@ -80,15 +80,6 @@
   }
 }
 
-.voice__review--text-sub {
-  margin-top: 16px;
-  @include font(16, 500, 24, 0.64);
-  min-height: 240px;
-  @include mq(sp) {
-    min-height: auto;
-  }
-}
-
 .voice__review--text-main {
   color: var(--White, #fff);
   @include font(20, 700, 30, 0.8);
@@ -99,6 +90,16 @@
     margin-top: 8px;
   }
 }
+
+.voice__review--text-sub {
+  margin-top: 16px;
+  @include font(16, 500, 24, 0.64);
+  min-height: 240px;
+  @include mq(sp) {
+    min-height: auto;
+  }
+}
+
 .voice__review--author {
   margin-top: 16px;
 }

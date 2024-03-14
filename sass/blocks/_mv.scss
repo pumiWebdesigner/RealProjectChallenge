@@ -32,8 +32,8 @@
 
 // 大文字
 .mv__text {
-  & + & {
-    margin-top: 8px;
+  .spacer {
+    height: 8px;
   }
   p {
     display: inline-block;

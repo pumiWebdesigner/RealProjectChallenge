@@ -106,7 +106,8 @@
   transition: all 0.3s ease;
   pointer-events: none;
   position: fixed;
-  z-index: 999;
+  z-index: map.get($layer, header-nav);
+
   top: calc(map.get($header, pc-height) + 16.5px);
   left: 50%;
   transform: translateX(-50%);
@@ -127,6 +128,7 @@
     width: calc(311 / 343 * 100%);
   }
 }
+
 // ホバーメニューのタイトル＆項目
 .header__menu--list {
   display: flex;
@@ -164,8 +166,25 @@
   }
 }
 
-// .header__nav--link {
-// }
+.header__menu--mask {
+  position: fixed;
+  top: map.get($header, pc-height);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - map.get($header, pc-height));
+  background: rgba(86, 89, 86, 0.56);
+  z-index: map.get($layer, header-mask);
+  pointer-events: none;
+  opacity: 0;
+  .header__menu.is-hover & {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  @include mq(sp) {
+    top: map.get($header, sp-height);
+    height: calc(100vh - map.get($header, sp-height));
+  }
+}
 
 .header__nav--btn {
   @include font(14, 700, 21, 0.56);

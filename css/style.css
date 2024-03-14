@@ -446,7 +446,7 @@ th {
 .header {
   background: #fff;
   position: fixed;
-  z-index: 20;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -566,7 +566,7 @@ th {
   transition: all 0.3s ease;
   pointer-events: none;
   position: fixed;
-  z-index: 999;
+  z-index: 90;
   top: 86px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -644,6 +644,28 @@ th {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 144px;
             flex: 0 0 144px;
+  }
+}
+
+.header__menu--mask {
+  position: fixed;
+  top: 69.5px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 69.5px);
+  background: rgba(86, 89, 86, 0.56);
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0;
+}
+.header__menu.is-hover .header__menu--mask {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (width <= 767px) {
+  .header__menu--mask {
+    top: 48px;
+    height: calc(100vh - 48px);
   }
 }
 
@@ -931,8 +953,8 @@ th {
   line-height: 1.5;
   letter-spacing: 0.04em;
 }
-.mv__text + .mv__text {
-  margin-top: 8px;
+.mv__text .spacer {
+  height: 8px;
 }
 .mv__text p {
   display: inline-block;
@@ -999,6 +1021,8 @@ th {
   gap: 56px;
   border-radius: 16px;
   background: var(--White, #fff);
+  width: 719px;
+  margin-inline: auto;
 }
 @media (width <= 767px) {
   .cta__container {
@@ -1026,8 +1050,8 @@ th {
           transform: rotate(-29.317deg);
   padding: 0px 16px;
   position: absolute;
-  left: 23.005px;
-  top: -30.015px;
+  left: 24px;
+  top: -11px;
   background: var(--Gray01, #565956);
 }
 @media (width <= 767px) {
@@ -1449,6 +1473,22 @@ th {
   }
 }
 
+.voice__review--text-main {
+  color: var(--White, #fff);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.voice__review--text-main p {
+  display: inline-block;
+  background: var(--Gold, #948260);
+  padding: 4px 10px;
+}
+.voice__review--text-main .spacer {
+  height: 8px;
+}
+
 .voice__review--text-sub {
   margin-top: 16px;
   font-size: 1rem;
@@ -1461,20 +1501,6 @@ th {
   .voice__review--text-sub {
     min-height: auto;
   }
-}
-
-.voice__review--text-main {
-  color: var(--White, #fff);
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  background: var(--Gold, #948260);
-  padding: 4px 10px;
-  display: inline-block;
-}
-.voice__review--text-main + .voice__review--text-main {
-  margin-top: 8px;
 }
 
 .voice__review--author {

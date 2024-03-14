@@ -25,6 +25,8 @@
   gap: 56px;
   border-radius: 16px;
   background: var(--White, #fff);
+  width: 719px;
+  margin-inline: auto;
   @include mq(sp) {
     padding: 32px 16px;
     gap: 24px;
@@ -44,8 +46,10 @@
   transform: rotate(-29.317deg);
   padding: 0px 16px;
   position: absolute;
-  left: 23.005px;
-  top: -30.015px;
+  left: 24px;
+  top: -11px;
+  // left: 23.005px;
+  // top: -30.015px;
   background: var(--Gray01, #565956);
   @include mq(sp) {
     transform: rotate(0deg);

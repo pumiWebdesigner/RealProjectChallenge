@@ -83,11 +83,14 @@
 .voice__review--text-main {
   color: var(--White, #fff);
   @include font(20, 700, 30, 0.8);
-  background: var(--Gold, #948260);
-  padding: 4px 10px;
-  display: inline-block;
-  & + & {
-    margin-top: 8px;
+  p {
+    display: inline-block;
+    background: var(--Gold, #948260);
+    padding: 4px 10px;
+  }
+
+  .spacer {
+    height: 8px;
   }
 }
 

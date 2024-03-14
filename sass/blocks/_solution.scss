@@ -12,93 +12,85 @@
   .section__title--en {
   }
 }
+// .section {
 
-.voice__container {
+// }
+
+.solution {
+  background: url(../../img/solution/img_background.png), lightgray 50% / cover no-repeat;
+
+  .section__inner {
+  }
+
+  .section__title--ja {
+  }
+
+  .section__title--en {
+  }
+}
+
+.solution__container {
   margin-top: 64px;
 }
 
-.voice__reviews {
-  display: flex;
-  justify-content: center;
-  align-items: stretch; /* デフォルト値であり、すべてのアイテムの高さをコンテナに合わせて伸ばします */
-
-  @include mq(sp) {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.voice__review--item {
+.solution__items {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 393px;
-
-  @include mq(sp) {
-    width: 343px;
-  }
+  gap: 26px;
 }
 
-.voice__review--img {
+.solution__item {
+  @include font(20, 500, 30, 0.8);
+  padding-block: 28px;
+  border-radius: 32px;
+  background: var(--White, #fff);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+  display: block;
   width: 100%;
-  position: relative;
-  img {
-    aspect-ratio: 393/221;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    @include mq(sp) {
-      // aspect-ratio: 343/193;
-      aspect-ratio: 343/192;
-    }
-  }
-}
-
-.voice__review--label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 122px;
-  height: 40px;
-  padding-block: 8px;
-  background: var(--Green, #609484);
-  color: var(--White, #fff);
-  font-family: Jost;
-  @include font(16, 600, 24, 0.64);
-}
-
-.voice__review--texts {
-  padding: 24px 47.5px;
-  background: var(--Gray03, #f2f4f1);
   text-align: left;
-  height: 100%;
-  .voice__review--item:nth-child(2) & {
-    background: var(--White, #fff);
-  }
-  @include mq(sp) {
-    padding: 24px 23.5px;
-  }
-}
-
-.voice__review--text-sub {
-  margin-top: 16px;
-  @include font(16, 500, 24, 0.64);
-  min-height: 240px;
-  @include mq(sp) {
-    min-height: auto;
+  padding-left: 114px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    background: url(../../img/solution/check.svg) center / cover no-repeat;
   }
 }
 
-.voice__review--text-main {
+.solution__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  @include mq(sp) {
+    display: contents;
+  }
+}
+
+.section__label {
+  margin-top: 96.5px;
   color: var(--White, #fff);
-  @include font(20, 700, 30, 0.8);
-  background: var(--Gold, #948260);
-  padding: 4px 10px;
+  font-family: "Noto Sans JP";
+  @include font(24, 700, 36, 0.96);
+  background: var(--Green, #609484);
   display: inline-block;
-  & + & {
-    margin-top: 8px;
+  padding: 30px 77px;
+  margin-inline: auto;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: calcU(1180 / 1115 * 100%);
+    height: auto;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(../../img/solution/hukidasi.svg) center / cover no-repeat;
   }
-}
-.voice__review--author {
-  margin-top: 16px;
 }

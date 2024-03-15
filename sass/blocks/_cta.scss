@@ -25,7 +25,8 @@
   gap: 56px;
   border-radius: 16px;
   background: var(--White, #fff);
-  width: 719px;
+  max-width: 719px;
+  width: 100%;
   margin-inline: auto;
   @include mq(sp) {
     padding: 32px 16px;

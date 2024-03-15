@@ -615,9 +615,6 @@ th {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 48px 32px;
@@ -1193,6 +1190,8 @@ th {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .cta__button--cta span {
   display: inline-block;
@@ -1209,6 +1208,13 @@ th {
   width: 24px;
   height: 24px;
   background: url(../../img/cta/cta-arrow.svg) no-repeat center/contain;
+}
+@media (hover: hover) {
+  .cta__button--cta:hover {
+    border-radius: 16px;
+    opacity: 0.56;
+    background: linear-gradient(87deg, #698 2.32%, #689 96.4%);
+  }
 }
 @media (width <= 767px) {
   .cta__button--cta {
@@ -2070,6 +2076,7 @@ th {
   padding-bottom: 112px;
   position: relative;
   padding-top: 79px;
+  display: none;
 }
 
 .features__container {

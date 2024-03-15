@@ -2076,7 +2076,6 @@ th {
   padding-bottom: 112px;
   position: relative;
   padding-top: 79px;
-  display: none;
 }
 
 .features__container {
@@ -2114,7 +2113,9 @@ th {
 
 .features__img {
   aspect-ratio: 446/275;
-  width: 37.7966101695%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30.9722222222vw;
+          flex: 0 0 30.9722222222vw;
   height: auto;
 }
 .features__img img {

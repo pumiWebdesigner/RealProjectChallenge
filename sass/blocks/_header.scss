@@ -108,7 +108,7 @@
   position: fixed;
   z-index: map.get($layer, header-nav);
 
-  top: calc(map.get($header, pc-height) + 16.5px);
+  top: calc(map.get($height, pc-header) + 16.5px);
   left: 50%;
   transform: translateX(-50%);
 
@@ -167,10 +167,10 @@
 
 .header__menu--mask {
   position: fixed;
-  top: map.get($header, pc-height);
+  top: map.get($height, pc-header);
   left: 0;
   width: 100%;
-  height: calc(100vh - map.get($header, pc-height));
+  height: calc(100vh - map.get($height, pc-header));
   background: rgba(86, 89, 86, 0.56);
   z-index: map.get($layer, header-mask);
   pointer-events: none;
@@ -180,8 +180,8 @@
     pointer-events: auto;
   }
   @include mq(sp) {
-    top: map.get($header, sp-height);
-    height: calc(100vh - map.get($header, sp-height));
+    top: map.get($height, sp-header);
+    height: calc(100vh - map.get($height, sp-header));
   }
 }
 

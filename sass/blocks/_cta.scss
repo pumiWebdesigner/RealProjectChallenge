@@ -159,7 +159,6 @@
   transition: all 0.3s ease;
   @media (hover: hover) {
     &:hover {
-      border-radius: 16px;
       opacity: 0.56;
       background: linear-gradient(87deg, #698 2.32%, #689 96.4%);
     }

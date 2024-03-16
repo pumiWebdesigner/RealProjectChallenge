@@ -842,6 +842,11 @@ th {
   height: 1px;
   background: #fff;
 }
+@media (width <= 767px) {
+  .footer__link--head {
+    padding-bottom: 8px;
+  }
+}
 
 .footer__link--body {
   margin-top: 16px;
@@ -1201,7 +1206,6 @@ th {
 }
 @media (hover: hover) {
   .cta__button--cta:hover {
-    border-radius: 16px;
     opacity: 0.56;
     background: linear-gradient(87deg, #698 2.32%, #689 96.4%);
   }
@@ -1765,7 +1769,7 @@ th {
   .realization2__contents {
     width: 100% !important;
     margin-top: 0;
-    padding: 24px 16px 32px;
+    padding: 24px 15px 32px 16px;
   }
 }
 
@@ -1819,10 +1823,12 @@ th {
   height: 1px;
   background: #565956;
 }
-.realization2__text--sub-title .realization2__text--sub:nth-child(1) .realization2__text--sub-title::after {
+.realization2__text--sub-title.stylepoint::after {
+  top: 45%;
   width: calc(100% - 157px);
 }
-.realization2__text--sub-title .realization2__text--sub:nth-child(2) .realization2__text--sub-title::after {
+.realization2__text--sub-title.onepointadvice::after {
+  top: 45%;
   width: calc(100% - 226px);
 }
 
@@ -1959,7 +1965,7 @@ th {
 .realization2__lineup--title-main::before, .realization2__lineup--title-main::after {
   content: "";
   position: absolute;
-  width: 16.6666666667%;
+  width: calc(33.5px + 206.5 * (100vw - 375px) / 1065);
   height: 1px;
   background: #565956;
   top: 13px;
@@ -1975,7 +1981,6 @@ th {
     margin-left: 0;
   }
   .realization2__lineup--title-main::before, .realization2__lineup--title-main::after {
-    width: 33.5px;
     top: 14px;
   }
   .realization2__lineup--title-main::before {
@@ -2212,9 +2217,14 @@ th {
 .howtouse {
   padding-bottom: 87px;
 }
+@media (width <= 767px) {
+  .howtouse {
+    padding-bottom: 56px;
+  }
+}
 
 .howtouse__container {
-  margin-top: calc(32px + 32 * (100vw - 375px) / 1065);
+  margin-top: calc(33px + 31 * (100vw - 375px) / 1065);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2270,7 +2280,7 @@ th {
 }
 @media (width <= 767px) {
   .howtouse__title {
-    margin-top: 20px;
+    margin-top: 24px;
   }
 }
 
@@ -2304,9 +2314,19 @@ th {
   letter-spacing: 0.04em;
   text-align: left;
 }
+@media (width <= 767px) {
+  .howtouse__message {
+    margin-top: 10px;
+  }
+}
 
 .faq {
   padding-bottom: 87px;
+}
+@media (width <= 767px) {
+  .faq {
+    padding-bottom: 57px;
+  }
 }
 
 .faq__container {
@@ -2320,10 +2340,7 @@ th {
 }
 @media (width <= 767px) {
   .faq__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: block;
   }
 }
 
@@ -2331,6 +2348,17 @@ th {
   width: 40.2777777778vw;
   text-align: left;
   margin-right: -2px;
+}
+@media (width <= 767px) {
+  .faq__accordion {
+    width: 100%;
+  }
+  .faq__accordion + .faq__accordion {
+    margin-top: 24px;
+  }
+  .faq__accordion + .faq__accordion:nth-of-type(2n + 3) {
+    margin-top: 32px;
+  }
 }
 
 .faq__question {
@@ -2354,6 +2382,11 @@ th {
   bottom: 0;
   background: #565956;
 }
+@media (width <= 767px) {
+  .faq__question {
+    padding-inline: 0px;
+  }
+}
 
 .faq__question--icon {
   color: var(--Gold, #948260);
@@ -2376,6 +2409,8 @@ th {
   width: 24px;
   height: 24px;
   background: url(../../img/faq/plus.svg) no-repeat center center/cover;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .js-faq.is-open .faq__question--btn {
   background: url(../../img/faq/minus.svg) no-repeat center center/cover;
@@ -2383,12 +2418,19 @@ th {
 
 .faq__answer {
   margin-top: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   gap: 24px;
   padding-inline: 22px;
   display: none;
+}
+.js-faq.is-open .faq__answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (width <= 767px) {
+  .faq__answer {
+    padding-inline: 0px;
+  }
 }
 
 .faq__answer--icon {
@@ -2421,6 +2463,19 @@ th {
   padding: 20px 40px 20px 56px;
   border-radius: 99999px;
   background: var(--Green, #609484);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media (width <= 767px) {
+  .faq__btn {
+    margin-top: 32px;
+  }
+}
+@media (hover: hover) {
+  .faq__btn:hover {
+    opacity: 0.56;
+    background: linear-gradient(87deg, #698 2.32%, #689 96.4%);
+  }
 }
 
 .faq__btn--text {

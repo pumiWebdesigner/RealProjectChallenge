@@ -71,6 +71,9 @@
     height: 1px;
     background: #fff;
   }
+  @include mq(sp) {
+    padding-bottom: 8px;
+  }
 }
 
 .footer__link--body {

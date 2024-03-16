@@ -3,10 +3,13 @@
 
 .howtouse {
   padding-bottom: 87px;
+  @include mq(sp) {
+    padding-bottom: 56px;
+  }
 }
 
 .howtouse__container {
-  margin-top: calc(32px + (64 - 32) * ((100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))));
+  margin-top: calc(33px + (64 - 33) * ((100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +42,7 @@
   align-items: center;
   gap: 24px;
   @include mq(sp) {
-    margin-top: 20px;
+    margin-top: 24px;
   }
 }
 
@@ -60,4 +63,7 @@
   margin-top: 14px;
   @include font(16, 500, 24, 0.64);
   text-align: left;
+  @include mq(sp) {
+    margin-top: 10px;
+  }
 }

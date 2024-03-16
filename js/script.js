@@ -37,20 +37,10 @@
       speed
     );
   }
-  //ドロワーボタン（ハンバーガーボタン）
-  jQuery("#js-drawer__btn").on("click", function (e) {
-    e.preventDefault();
-    jQuery("body").toggleClass("drawer-open");
-  });
 
-  //スクロール後処理__画面最上部からtargetの場所を超えたら起動
-  jQuery(window).on("scroll", function () {
-    // target：スマホのheader色、to-topボタン
-    var target = 300;
-    if (jQuery(this).scrollTop() > target) {
-      jQuery("body").addClass("is-scroll");
-    } else {
-      jQuery("body").removeClass("is-scroll");
-    }
+  // アコーディオン
+  jQuery(".js-faq").on("click", function () {
+    jQuery(this).find(".faq__answer").slideToggle();
+    jQuery(this).toggleClass("is-open");
   });
 }

@@ -92,7 +92,7 @@
   @include mq(sp) {
     width: 100% !important;
     margin-top: 0;
-    padding: 24px 16px 32px;
+    padding: 24px 15px 32px 16px;
   }
 }
 
@@ -137,12 +137,24 @@
     height: 1px;
     background: #565956;
   }
-  .realization2__text--sub:nth-child(1) .realization2__text--sub-title::after {
-    width: calc(100% - 157px);
+  &.stylepoint {
+    &::after {
+      top: 45%;
+      width: calc(100% - 157px);
+    }
   }
-  .realization2__text--sub:nth-child(2) .realization2__text--sub-title::after {
-    width: calc(100% - 226px);
+  &.onepointadvice {
+    &::after {
+      top: 45%;
+      width: calc(100% - 226px);
+    }
   }
+  // .realization2__text--sub:nth-child(1) .realization2__text--sub-title::after {
+  //   width: calc(100% - 157px);
+  // }
+  // .realization2__text--sub:nth-child(2) .realization2__text--sub-title::after {
+  //   width: calc(100% - 226px);
+  // }
 }
 
 .realization2__text--sub-message {
@@ -287,7 +299,8 @@
   &::after {
     content: "";
     position: absolute;
-    width: calc(240 / 1440 * 100%);
+    // width: calc(240 / 1440 * 100%);
+    width: calc(33.5px + (240 - 33.5) * ((100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))));
     height: 1px;
     background: #565956;
     top: 13px;
@@ -302,7 +315,7 @@
     margin-left: 0;
     &::before,
     &::after {
-      width: 33.5px;
+      // width: 33.5px;
       top: 14px;
     }
     &::before {

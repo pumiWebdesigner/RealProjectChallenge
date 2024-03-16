@@ -14,12 +14,9 @@
   }
 }
 .mv__inner {
-  padding-inline: 130px;
+  padding-inline: calc(16px + (130 - 16) * ((100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))));
   max-width: 1440px;
   height: 100%;
-  @include mq(sp) {
-    padding-inline: 16px;
-  }
 }
 // 大文字・小文字のボックス
 .mv__container {

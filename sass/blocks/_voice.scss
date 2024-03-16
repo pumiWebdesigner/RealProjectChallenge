@@ -23,7 +23,9 @@
   justify-content: center;
   align-items: stretch; /* デフォルト値であり、すべてのアイテムの高さをコンテナに合わせて伸ばします */
 
-  @include mq(sp) {
+  @media screen and (max-width: 1300px) {
+    // }
+    //   @include mq(sp) {
     flex-direction: column;
     align-items: center;
   }
@@ -34,9 +36,8 @@
   flex-direction: column;
   align-items: center;
   width: 393px;
-
-  @include mq(sp) {
-    width: 343px;
+  @media screen and (max-width: 1300px) {
+    width: calc(343px + (1000 - 343) * ((100vw - 375px) / (1300 - 375)));
   }
 }
 

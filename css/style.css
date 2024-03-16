@@ -2337,6 +2337,7 @@ th {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 32px 24px;
+  margin-inline: -2px;
 }
 @media (width <= 767px) {
   .faq__container {
@@ -2347,7 +2348,6 @@ th {
 .faq__accordion {
   width: 40.2777777778vw;
   text-align: left;
-  margin-right: -2px;
 }
 @media (width <= 767px) {
   .faq__accordion {

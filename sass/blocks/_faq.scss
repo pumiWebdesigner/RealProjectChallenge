@@ -16,6 +16,8 @@
   // align-items: center;
   gap: 32px 24px;
   // gap: 36px;
+  margin-inline: -2px;
+
   @include mq(sp) {
     display: block;
     // flex-direction: column;
@@ -27,7 +29,6 @@
   // display: flex;
   width: calc(580 / 1440 * 100vw);
   text-align: left;
-  margin-right: -2px;
   @include mq(sp) {
     width: 100%;
     & + & {

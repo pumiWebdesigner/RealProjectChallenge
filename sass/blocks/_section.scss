@@ -26,7 +26,7 @@
 }
 .section__title--ja {
   @include font(24, 700, 36, 0.96);
-  padding-bottom: 17px;
+  padding-bottom: 16px;
   position: relative;
   &::after {
     content: "";

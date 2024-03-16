@@ -3,16 +3,16 @@
 
 .features {
   background: lightgray url(../../img/features/features.png) center / cover no-repeat;
-  padding-bottom: 112px;
+  padding-bottom: 80px;
   position: relative;
   padding-top: 79px;
   @include mq(sp) {
     padding-top: 56px;
+    padding-bottom: 56px;
   }
   .section__title--ja {
     padding-bottom: 16px;
   }
-  padding-inline: calc(20px + (120 - 20) * ((100vw - 768px) / (1440 - 768)));
 }
 
 .features__container {

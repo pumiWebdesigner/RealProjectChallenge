@@ -39,7 +39,8 @@ body {
   height: 200px;
   margin-inline: auto;
   @include padding-inline-calc(16, 100);
-  @include width-calc(300, 500);
+  width: size-calc(16, 100, 375, 1000);
+  width: size-calc(16, 100, );
 }
 .testtest {
   background-color: blue;

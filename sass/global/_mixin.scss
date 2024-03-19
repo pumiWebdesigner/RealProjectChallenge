@@ -7,11 +7,6 @@ $size: (
   tab-max: 1023px,
   pc-min: 1024px
 );
-$width: (
-  pc-comp: 1440,
-  tab-comp: 768,
-  sp-comp: 375,
-);
 
 $breakpoints: (
   "sp": "(width <=  #{map.get($size, "sp-max")})",
@@ -43,25 +38,84 @@ $breakpoints: (
   }
 }
 
-// 画面幅に応じてpaddingを計算する
-@mixin padding-inline-calc($min-size: null, $max-size: null, $min-width: null, $max-width: null) {
-  // 1から4引数まで全ての変数が設定：変数を使ってサイズを計算する
-  @if $min-size != null and $max-size != null and $min-width != null and $max-width != null {
-    padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
-  }
-  // 1から2引数までの変数が設定：変数とカンプサイズを使ってサイズを計算する
-  @if $min-size != null and $max-size != null and $min-width == null and $max-width == null {
-    padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp)));
+$width: (
+  pc-comp: 1440,
+  tab-comp: 768,
+  sp-comp: 375,
+);
+@function size-calc($min-size: null, $max-size: null, $min-width: map.get($width, sp-comp), $max-width: map.get($width, pc-comp)) {
+  //  $min-size, $max-size：（必須項目）返り値の最小値と最大値
+  //  $min-width, $max-width：（任意項目）返り値の推奨値計算に使用。基準となる画面幅の最小値と最大値（もしくはカンプの横幅）
+
+  @if $min-size != null and $max-size != null {
+    @return clamp(#{$min-size}px, calc(#{$min-size}px + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width)), #{$max-size}px);
+  } @else {
+    @warn "!!!Missing or invalid arguments. 2 parameters (min-size, max-size) must be provided.!!!";
+    @return null;
   }
 }
 // 画面幅に合わせてwidthを計算する
-@mixin width-calc($min-size: null, $max-size: null, $min-width: null, $max-width: null) {
-  // 1から4引数まで全ての変数が設定：変数を使ってサイズを計算する
-  @if $min-size != null and $max-size != null and $min-width != null and $max-width != null {
-    width: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
-  }
-  // 1から2引数までの変数が設定：変数とカンプサイズを使ってサイズを計算する
-  @if $min-size != null and $max-size != null and $min-width == null and $max-width == null {
-    width: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp)));
-  }
-}
+// @mixin width-calc-by-vew($property, $min-size: null, $max-size: null, $min-width: null, $max-width: null) {
+//   // 1から4引数まで全ての変数が設定：変数を使ってサイズを計算する
+//   @if $min-size != null and $max-size != null {
+//     @if $min-width != null and $max-width != null {
+//       #{$property}: clamp($min-size, calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width)), $max-size);
+//     }
+// 1から2引数までの変数が設定：変数とカンプサイズを使ってサイズを計算する
+//     @else if $min-width == null and $max-width == null {
+//       #{$property}: clamp($min-size, calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))), $max-size);
+//     }
+//   }
+// }
+
+// @if $min-size != null and $max-size != null {
+//   @if $min-width != null and $max-width != null {
+//   }
+//   1から2引数までの変数が設定：変数とカンプサイズを使ってサイズを計算する @else if $min-width == null and $max-width == null {
+//     @return clamp(#{$min-size}px, calc(#{$min-size}px + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))), #{$max-size}px);
+//     @return clamp(#{$min-size}px, calc(#{$min-size}px + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))), #{$max-size}px);
+//   }
+// }
+
+// この mixin は、指定された CSS プロパティ ($property) の値を、ビューポートの幅に応じて動的に計算します。
+// $min-size と $max-size は、ビューポートの最小幅および最大幅でのプロパティの値を指定します。
+// $min-width と $max-width はオプショナルで、特定のビューポート幅の範囲を指定するために使用します。
+// これらが指定されない場合、sp-comp (375px) と pc-comp (1440px) の値がデフォルトとして使用されます。
+// $width: (
+//   pc-comp: 1440,
+//   pc-comp-alt: 1280,
+//   tab-comp: 1024,
+//   sp-comp: 375,
+// );
+
+// @mixin width-calc-by-vew($property, $min-size: null, $max-size: null, $device-min: sp-comp, $device-max: pc-comp) {
+//   @if map.has($width, $device-min) and map.has($width, $device-max) {
+//     $min-width: map.get($width, $device-min);
+//     $max-width: map.get($width, $device-max);
+
+//     #{$property}: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
+//   } @else {
+//     @warn "The specified devices are not defined in the width map.";
+//   }
+// }
+
+// 画面幅に応じてpaddingを計算する
+// 1から4引数まで全ての変数が設定：変数を使ってサイズを計算する
+// 1から2引数までの変数が設定：変数とカンプサイズを使ってサイズを計算する
+// @mixin padding-inline-calc($min-size: null, $max-size: null, $min-width: null, $max-width: null) {
+//   @if $min-size != null and $max-size != null and $min-width != null and $max-width != null {
+//     padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
+//   }
+//   @if $min-size != null and $max-size != null and $min-width == null and $max-width == null {
+//     padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp)));
+//   }
+// }
+// 画面幅に合わせてwidthを計算する
+// @mixin width-calc($min-size: null, $max-size: null, $min-width: null, $max-width: null) {
+//   @if $min-size != null and $max-size != null and $min-width != null and $max-width != null {
+//     width: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
+//   }
+//   @if $min-size != null and $max-size != null and $min-width == null and $max-width == null {
+//     width: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp)));
+//   }
+// }

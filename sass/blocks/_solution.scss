@@ -122,12 +122,12 @@
     height: 180px;
     bottom: -124px;
     &::after {
-      width: 343px;
+      width: 300px;
       height: 237px;
       bottom: -70px;
       left: 50%;
       transform: translateX(-50%);
-      background: url(../../img/solution/hukidasi-sp.svg) center / cover no-repeat;
+      background: url(../../img/solution/hukidasi-sp.svg) center / contain no-repeat;
     }
   }
 }

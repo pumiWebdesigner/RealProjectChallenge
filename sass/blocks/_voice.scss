@@ -87,6 +87,9 @@
     display: inline-block;
     background: var(--Gold, #948260);
     padding: 4px 10px;
+    @media screen and (max-width: 350px) {
+      font-size: 1rem;
+    }
   }
 }
 

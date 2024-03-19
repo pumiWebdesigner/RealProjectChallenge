@@ -10,6 +10,9 @@
   }
 }
 
+.realization2__inner {
+  width: 100%;
+}
 .realization2__container {
   margin-top: 93px;
   display: flex;
@@ -24,6 +27,7 @@
 
 .realization2__item {
   position: relative;
+  width: 100%;
   &::after {
     content: "";
     position: absolute;
@@ -93,6 +97,9 @@
     width: 100% !important;
     margin-top: 0;
     padding: 24px 15px 32px 16px;
+    .realization2__item-scene02 & {
+      width: 100%;
+    }
   }
 }
 

@@ -37,10 +37,4 @@
       speed
     );
   }
-
-  // アコーディオン
-  jQuery(".js-faq").on("click", function () {
-    jQuery(this).find(".faq__answer").slideToggle();
-    jQuery(this).toggleClass("is-open");
-  });
 }

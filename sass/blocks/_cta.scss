@@ -66,11 +66,17 @@
     margin-top: 32px;
     @include font(16, 700, 24, 0.64);
   }
+  @media screen and (max-width: 350px) {
+    font-size: 0.8rem;
+  }
 }
 
 .cta__message-l {
   margin-top: 8px;
   @include font(28, 700, 42, 1.12);
+  @media screen and (max-width: 350px) {
+    font-size: 1.5rem;
+  }
 }
 
 .cta__labels {
@@ -132,6 +138,9 @@
       left: 50%;
       transform: translateX(-50%) rotate(90deg);
     }
+  }
+  @media screen and (max-width: 350px) {
+    padding-inline: 27px;
   }
 }
 

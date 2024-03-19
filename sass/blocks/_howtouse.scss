@@ -25,6 +25,7 @@
 }
 
 .howtouse__item {
+  max-width: 100%;
   width: calc(343px + (268 - 343) * ((100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp))));
 }
 .howtouse__img {

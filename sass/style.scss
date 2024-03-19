@@ -18,3 +18,31 @@ body {
     }
   }
 }
+// @mixin padding-inline-calc($min-size: null, $max-size: null, $sp-width-var: null, $pc-width-var: null) {
+//   // 全ての変数が入っている場合のみ
+//   @if $min-size != null and $max-size != null and $sp-width-var != null and $pc-width-var != null {
+//     padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - calc($sp-width-var * 1px)) / ($pc-width-var - $sp-width-var));
+//   }
+// }
+// @mixin padding-inline-calc($min-size: null, $max-size: null, $min-width: null, $max-width: null) {
+//   // 1から4引数まで全ての変数が設定：変数を使ってサイズを計算する
+//   @if $min-size != null and $max-size != null and $min-width != null and $max-width != null {
+//     padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
+//   }
+//   // 1から2引数まで全ての変数が設定：変数とカンプサイズを使ってサイズを計算する
+//   @if $min-size != null and $max-size != null and $min-width == null and $max-width == null {
+//     padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp)));
+//   }
+// }
+.selector {
+  background-color: red;
+  height: 200px;
+  margin-inline: auto;
+  @include padding-inline-calc(16, 100);
+  @include width-calc(300, 500);
+}
+.testtest {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+}

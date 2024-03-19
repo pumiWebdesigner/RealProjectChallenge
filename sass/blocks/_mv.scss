@@ -2,6 +2,8 @@
 @use "../global" as *;
 
 .mv {
+  // width: 100svh;
+  // height: 100svh;
   margin-top: map.get($height, pc-header);
   background: url(../../img/mv/img_main_visual.png) no-repeat center top -3px / cover lightgray;
   width: 100%;

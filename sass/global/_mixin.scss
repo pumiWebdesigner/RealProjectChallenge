@@ -1,5 +1,5 @@
 @use "sass:map";
-
+// @use "./variable";
 $size: (
   // sp-max: 1023px,
   sp-max: 767px,
@@ -7,19 +7,18 @@ $size: (
   tab-max: 1023px,
   pc-min: 1024px
 );
+$width: (
+  pc-comp: 1440,
+  tab-comp: 768,
+  sp-comp: 375,
+);
 
 $breakpoints: (
   "sp": "(width <=  #{map.get($size, "sp-max")})",
+  "sp-tab": "width <=  #{map.get($size, "tab-max")})",
   "tab": "(#{map.get($size, "tab-min")} <= width <=  #{map.get($size, "tab-max")})",
-  // "tab": "(width <=  #{map.get($size, "tab-max")})",
+  "tab-pc": "(#{map.get($size, "tab-min")} <= width)",
   "pc": "(#{map.get($size, "pc-min")} <= width)",
-  // "tab": "(#{map.get($size, "tab-min")} <= width <=  #{map.get($size, "tab-max")})",
-  // "pc": "not (width <=  #{map.get($size, "pc-min")})",
-  // sp: "not (min-width: 768px)",
-  // "sp": "(width <= 767px)",
-  // "tb": "(768px <= width <=  1023px)",
-  // "pc": "( #{map.get($size, "pc-min")} <= width)",
-  // "pc": "(768px <= width)",,,,,,,,,,,,,,,,
 ) !default;
 
 @mixin mq($breakpoint: "sp") {
@@ -41,5 +40,28 @@ $breakpoints: (
   }
   @if $spacing {
     letter-spacing: calc($spacing / $size * 1em);
+  }
+}
+
+// 画面幅に応じてpaddingを計算する
+@mixin padding-inline-calc($min-size: null, $max-size: null, $min-width: null, $max-width: null) {
+  // 1から4引数まで全ての変数が設定：変数を使ってサイズを計算する
+  @if $min-size != null and $max-size != null and $min-width != null and $max-width != null {
+    padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
+  }
+  // 1から2引数までの変数が設定：変数とカンプサイズを使ってサイズを計算する
+  @if $min-size != null and $max-size != null and $min-width == null and $max-width == null {
+    padding-inline: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp)));
+  }
+}
+// 画面幅に合わせてwidthを計算する
+@mixin width-calc($min-size: null, $max-size: null, $min-width: null, $max-width: null) {
+  // 1から4引数まで全ての変数が設定：変数を使ってサイズを計算する
+  @if $min-size != null and $max-size != null and $min-width != null and $max-width != null {
+    width: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
+  }
+  // 1から2引数までの変数が設定：変数とカンプサイズを使ってサイズを計算する
+  @if $min-size != null and $max-size != null and $min-width == null and $max-width == null {
+    width: calc(($min-size * 1px) + ($max-size - $min-size) * (100vw - #{map.get($width, sp-comp)}px) / (map.get($width, pc-comp) - map.get($width, sp-comp)));
   }
 }

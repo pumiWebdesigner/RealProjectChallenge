@@ -62,3 +62,9 @@
 .spacer {
   height: 8px;
 }
+.mask {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: gray;
+}

@@ -8,6 +8,29 @@
   --accent: #ee5a6d;
   --hov-btn: #0060a0;
   --Gray02: #b1b6af;
+  --font: #565956;
+  --clip-triangle-top: polygon(50% 0, 100% 100%, 0 100%);
+  --clip-triangle-bottom: polygon(0 0, 100% 0, 50% 100%);
+  --clip-triangle-right: polygon(0 0, 100% 50%, 0 100%);
+  --clip-triangle-left: polygon(0 50%, 100% 0, 100% 100%);
+  --clip-triangle-lower-left: polygon(0 0, 100% 100%, 0 100%);
+  --clip-triangle-upper-left: polygon(0 0, 100% 0, 0 100%);
+  --clip-triangle-lower-right: polygon(100% 0, 100% 100%, 0 100%);
+  --clip-triangle-upper-right: polygon(0 0, 100% 0, 100% 100%);
+  --layer-header: 100;
+  --layer-header-nav: 90;
+  --layer-header-mask: 80;
+  --layer-footer: 50;
+  --layer-default: 1;
+  --layer-background: -1;
+  --width-pc-comp: 1440;
+  --width-tab-comp: 768;
+  --width-sp-comp: 375;
+  --height-pc-header: 69.5px;
+  --height-sp-header: 48px;
+  --padding-pc-comp: 130;
+  --padding-tab-comp: 60;
+  --padding-sp-comp: 16;
 }
 
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
@@ -446,6 +469,13 @@ th {
 
 .spacer {
   height: 8px;
+}
+
+.mask {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: gray;
 }
 
 .header {
@@ -1516,6 +1546,11 @@ th {
   padding-bottom: 112px;
   position: relative;
 }
+@media (768px <= width <= 1023px) {
+  .solution {
+    margin-bottom: 88px;
+  }
+}
 
 .solution__container {
   margin-top: 64px;
@@ -1612,7 +1647,6 @@ th {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 77.4305555556%;
-  height: 96px;
   color: var(--White, #fff);
   font-size: 1.5rem;
   font-weight: 700;
@@ -1631,6 +1665,27 @@ th {
   right: -33.5px;
   bottom: -34px;
   background: url(../../img/solution/hukidasi.svg) center/cover no-repeat;
+}
+@media (768px <= width <= 1023px) {
+  .solution__label {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    padding: 30px 23px;
+    width: 308px;
+    height: 180px;
+    bottom: -124px;
+  }
+  .solution__label::after {
+    width: 343px;
+    height: 237px;
+    bottom: -70px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: url(../../img/solution/hukidasi-sp.svg) center/cover no-repeat;
+  }
 }
 @media (width <= 767px) {
   .solution__label {
@@ -2099,7 +2154,7 @@ th {
 }
 
 .features__item {
-  padding: 32px 106px;
+  padding: 32px calc(20px + 140 * (100vw - 768px) / 672);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2224,6 +2279,10 @@ th {
 }
 
 .howtouse__container {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   margin-top: calc(33px + 31 * (100vw - 375px) / 1065);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2231,10 +2290,15 @@ th {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   gap: 36px;
+}
+@media (768px <= width <= 1023px) {
+  .howtouse__container {
+    gap: 18px;
+  }
 }
 @media (width <= 767px) {
   .howtouse__container {
@@ -2278,9 +2342,14 @@ th {
           align-items: center;
   gap: 24px;
 }
+@media (768px <= width <= 1023px) {
+  .howtouse__title {
+    gap: 12px;
+  }
+}
 @media (width <= 767px) {
   .howtouse__title {
-    margin-top: 24px;
+    margin-top: 23px;
   }
 }
 
@@ -2291,6 +2360,14 @@ th {
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.04em;
+}
+@media (768px <= width <= 1023px) {
+  .howtouse__title--number {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
 }
 @media (width <= 767px) {
   .howtouse__title--number {
@@ -2304,6 +2381,14 @@ th {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.04em;
+}
+@media (768px <= width <= 1023px) {
+  .howtouse__title--text {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
 }
 
 .howtouse__message {
@@ -2380,7 +2465,7 @@ th {
   height: 1px;
   left: 0;
   bottom: 0;
-  background: #565956;
+  background: var(--font, #565956);
 }
 @media (width <= 767px) {
   .faq__question {
@@ -2460,7 +2545,7 @@ th {
       -ms-flex-align: center;
           align-items: center;
   gap: 48px;
-  padding: 20px 40px 20px 56px;
+  padding: 20px 40px 20px 55.5px;
   border-radius: 99999px;
   background: var(--Green, #609484);
   -webkit-transition: all 0.3s ease;
@@ -2505,4 +2590,18 @@ body {
   *:hover {
     cursor: pointer;
   }
+}
+
+.selector {
+  background-color: red;
+  height: 200px;
+  margin-inline: auto;
+  padding-inline: calc(16px + 84 * (100vw - 375px) / 1065);
+  width: calc(300px + 200 * (100vw - 375px) / 1065);
+}
+
+.testtest {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
 }

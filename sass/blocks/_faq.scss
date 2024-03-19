@@ -39,7 +39,6 @@
     }
   }
 }
-
 .faq__question {
   padding-bottom: 24px;
   display: flex;
@@ -54,7 +53,7 @@
     height: 1px;
     left: 0;
     bottom: 0;
-    background: map.get($color, font);
+    background: var(--font, #565956);
   }
   @include mq(sp) {
     padding-inline: 0px;
@@ -113,7 +112,7 @@
   align-items: center;
   gap: 48px;
 
-  padding: 20px 40px 20px 56px;
+  padding: 20px 40px 20px 55.5px;
   border-radius: 99999px;
   background: var(--Green, #609484);
   @include mq(sp) {

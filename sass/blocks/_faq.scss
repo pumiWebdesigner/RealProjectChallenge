@@ -27,7 +27,7 @@
 
 .faq__accordion {
   // display: flex;
-  width: calc(580 / 1440 * 100vw);
+  width: min(calc(580 / 1440 * 100vw), 580px);
   text-align: left;
   @include mq(sp) {
     width: 100%;

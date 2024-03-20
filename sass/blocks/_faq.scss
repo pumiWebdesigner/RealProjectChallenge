@@ -60,7 +60,6 @@
   }
 }
 .faq__answer {
-  margin-top: 24px;
   gap: 24px;
   padding-inline: 22px;
   display: flex;
@@ -72,6 +71,7 @@
     opacity: 1;
     transform: revert;
     height: revert;
+    margin-top: 24px;
   }
   @include mq(sp) {
     padding-inline: 0px;

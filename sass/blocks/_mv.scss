@@ -35,6 +35,9 @@
     display: inline-block;
     background: var(--White, #fff);
     padding: 4px 24px;
+    @media screen and (max-width: 350px) {
+      padding-inline: 4px;
+    }
   }
   color: var(--Gray01, #565956);
   @include font(40, 700, 60, 1.6);
@@ -47,6 +50,9 @@
   @include font(24, 700, 36, 0.96);
   p {
     padding: 8px 24px;
+    @media screen and (max-width: 350px) {
+      padding-inline: 4px;
+    }
   }
   @include mq(sp) {
     @include font(16, 700, 24, 0.64);

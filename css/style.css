@@ -984,6 +984,11 @@ th {
   background: var(--White, #fff);
   padding: 4px 24px;
 }
+@media screen and (max-width: 350px) {
+  .mv__text p {
+    padding-inline: 4px;
+  }
+}
 @media (width <= 767px) {
   .mv__text {
     font-size: 1.75rem;
@@ -1001,6 +1006,11 @@ th {
 }
 .mv__text--small p {
   padding: 8px 24px;
+}
+@media screen and (max-width: 350px) {
+  .mv__text--small p {
+    padding-inline: 4px;
+  }
 }
 @media (width <= 767px) {
   .mv__text--small {
@@ -1350,7 +1360,7 @@ th {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url(../../img/realization/pr.png), lightgray 50%/cover no-repeat;
+  background: url(../../img/realization/pr.png), 50%/cover no-repeat;
 }
 @media (width <= 767px) {
   .pr {
@@ -1376,6 +1386,14 @@ th {
     letter-spacing: 0.04em;
   }
 }
+@media screen and (max-width: 350px) {
+  .pr--text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
+}
 
 .pr--text-l {
   font-size: 4rem;
@@ -1389,6 +1407,14 @@ th {
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: 0.04em;
+  }
+}
+@media screen and (max-width: 350px) {
+  .pr--text-l {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.03125em;
   }
 }
 
@@ -1869,6 +1895,14 @@ th {
   display: inline-block;
   background: var(--Gold, #948260);
 }
+@media screen and (max-width: 350px) {
+  .realization2__text--main p {
+    font-size: 1.3125rem;
+    font-weight: 700;
+    line-height: 1.5428571429;
+    letter-spacing: 0.0411428571em;
+  }
+}
 
 .realization2__text--sub {
   padding-right: 27px;
@@ -2017,8 +2051,8 @@ th {
   }
   .realization2__img--right img, .realization2__item-scene02 .realization2__img--right img {
     aspect-ratio: 311/176;
-    -o-object-position: top -141px left 2px;
-       object-position: top -141px left 2px;
+    -o-object-position: top 50% left 2px;
+       object-position: top 50% left 2px;
   }
 }
 
@@ -2182,7 +2216,8 @@ th {
 }
 
 .features__item {
-  padding: 32px calc(20px + 140 * (100vw - 768px) / 672);
+  padding-block: 32px;
+  padding-inline: calc(20px + 86 * (100vw - 768px) / 672);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2334,6 +2369,9 @@ th {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 32px;
   }
 }
@@ -2503,7 +2541,6 @@ th {
 }
 
 .faq__answer {
-  margin-top: 24px;
   gap: 24px;
   padding-inline: 22px;
   display: -webkit-box;
@@ -2521,6 +2558,7 @@ th {
   -webkit-transform: revert;
           transform: revert;
   height: revert;
+  margin-top: 24px;
 }
 @media (width <= 767px) {
   .faq__answer {

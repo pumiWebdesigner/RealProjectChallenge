@@ -26,7 +26,9 @@
 }
 
 .features__item {
-  padding: 32px calc(20px + (160 - 20) * ((100vw - #{map.get($width, tab-comp)}px) / (map.get($width, pc-comp) - map.get($width, tab-comp))));
+  padding-block: 32px;
+  // padding-inline: size-calc(20, 106, 768, 1440);
+  padding-inline: calc(20px + (106 - 20) * ((100vw - #{map.get($width, tab-comp)}px) / (map.get($width, pc-comp) - map.get($width, tab-comp))));
   display: flex;
   gap: 80px;
   justify-content: center;

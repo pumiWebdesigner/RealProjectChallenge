@@ -2217,7 +2217,7 @@ th {
 
 .features__item {
   padding-block: 32px;
-  padding-inline: calc(20px + 86 * (100vw - 768px) / 672);
+  padding-inline: clamp(20px, 20px + 86 * (100vw - 768px) / 672, 106px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
